@@ -5,14 +5,14 @@ import javax.swing.JOptionPane;
 import model.Jogador;
 
 public class JCadastraJogador extends javax.swing.JPanel {
+
     private JogadorDAO jogadorDAO;
-    
+
     public JCadastraJogador() {
         initComponents();
         this.jogadorDAO = new JogadorDAO();
     }
 
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -68,7 +68,7 @@ public class JCadastraJogador extends javax.swing.JPanel {
         jLabel2.setText("Username:");
 
         jButtonCadastro.setBackground(new java.awt.Color(255, 204, 51));
-        jButtonCadastro.setFont(new java.awt.Font("BankGothic Md BT", 0, 14)); // NOI18N
+        jButtonCadastro.setFont(new java.awt.Font("BankGothic Md BT", 0, 12)); // NOI18N
         jButtonCadastro.setForeground(new java.awt.Color(51, 0, 153));
         jButtonCadastro.setText("CADASTRAR");
         jButtonCadastro.setMaximumSize(new java.awt.Dimension(115, 25));
@@ -81,7 +81,7 @@ public class JCadastraJogador extends javax.swing.JPanel {
         });
 
         jButtonVoltar.setBackground(new java.awt.Color(255, 204, 51));
-        jButtonVoltar.setFont(new java.awt.Font("BankGothic Md BT", 0, 14)); // NOI18N
+        jButtonVoltar.setFont(new java.awt.Font("BankGothic Md BT", 0, 12)); // NOI18N
         jButtonVoltar.setForeground(new java.awt.Color(51, 0, 153));
         jButtonVoltar.setText("Voltar");
         jButtonVoltar.setMaximumSize(new java.awt.Dimension(115, 25));
@@ -97,30 +97,28 @@ public class JCadastraJogador extends javax.swing.JPanel {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(49, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButtonCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButtonVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel2)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addGap(2, 2, 2)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(18, 18, 18)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jButtonCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButtonVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addGap(49, 49, 49))
         );
         jPanel1Layout.setVerticalGroup(
@@ -144,7 +142,7 @@ public class JCadastraJogador extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButtonCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -177,19 +175,24 @@ public class JCadastraJogador extends javax.swing.JPanel {
         String email = this.jTextEmail.getText();
         String senha = this.jPasswordField.getText();
 
-        Jogador temp = new Jogador(nome, email, senha);
-        boolean op = this.jogadorDAO.cadastraJogador(temp);
-        
-        if (op) {
-            JOptionPane.showMessageDialog(this, "Nov jogador cadastrado com sucesso!",
-                    "Sucesso",JOptionPane.INFORMATION_MESSAGE);
-            FramePrincipal.trocaPainel("cadastros", new JCadastros());
-            //volta para o frame
-        } else {
-            JOptionPane.showMessageDialog(this, "Falha no cadastro de novo jogador!",
-                    "Falha",JOptionPane.ERROR_MESSAGE);
+        if (nome != null && email != null && senha != null) {
+
+            Jogador temp = new Jogador(nome, email, senha);
+            boolean op = this.jogadorDAO.cadastraJogador(temp);
+
+            if (op) {
+                JOptionPane.showMessageDialog(this, "Nov jogador cadastrado com sucesso!",
+                        "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+                FramePrincipal.trocaPainel("cadastros", new JCadastros());
+                //volta para o frame
+            } else {
+                JOptionPane.showMessageDialog(this, "Falha no cadastro de novo jogador!",
+                        "Falha", JOptionPane.ERROR_MESSAGE);
+            }
         }
-        
+        else {
+            JOptionPane.showMessageDialog(this, "Não é possível cadastrar informações nulas!","falha",JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButtonCadastroActionPerformed
 
     private void jButtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarActionPerformed
