@@ -1,20 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package view;
 
-/**
- *
- * @author Vartin
- */
+import dao.MinigameDAO;
+import javax.swing.JOptionPane;
+import model.Minigame;
+
 public class JCadastraMinigame extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JCadastraMinigame
-     */
+    MinigameDAO minigameDAO;
+
     public JCadastraMinigame() {
         initComponents();
+
+        this.minigameDAO = new MinigameDAO();
     }
 
     /**
@@ -28,13 +25,17 @@ public class JCadastraMinigame extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextUsername = new javax.swing.JTextField();
-        jTextEmail = new javax.swing.JTextField();
-        jPasswordField = new javax.swing.JPasswordField();
+        jTextNome = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jButtonCadastro = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextDescricao = new javax.swing.JTextArea();
+        jTextRequisito = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jTextRecompensa = new javax.swing.JTextField();
+        jButtonVoltar = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 51));
 
@@ -42,33 +43,24 @@ public class JCadastraMinigame extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 204, 0));
         jLabel1.setText("REGISTRAR NOVO MINIGAME:");
 
-        jTextUsername.setBackground(new java.awt.Color(255, 204, 51));
-        jTextUsername.addActionListener(new java.awt.event.ActionListener() {
+        jTextNome.setBackground(new java.awt.Color(255, 204, 51));
+        jTextNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextUsernameActionPerformed(evt);
+                jTextNomeActionPerformed(evt);
             }
         });
-
-        jTextEmail.setBackground(new java.awt.Color(255, 204, 51));
-        jTextEmail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextEmailActionPerformed(evt);
-            }
-        });
-
-        jPasswordField.setBackground(new java.awt.Color(255, 204, 51));
 
         jLabel4.setFont(new java.awt.Font("BankGothic Lt BT", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 204, 51));
-        jLabel4.setText("Senha:");
+        jLabel4.setText("Recompensa:");
 
         jLabel3.setFont(new java.awt.Font("BankGothic Lt BT", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 204, 51));
-        jLabel3.setText("Email:");
+        jLabel3.setText("Descrição:");
 
         jLabel2.setFont(new java.awt.Font("BankGothic Lt BT", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 204, 0));
-        jLabel2.setText("Username:");
+        jLabel2.setText("Nome:");
 
         jButtonCadastro.setBackground(new java.awt.Color(255, 204, 51));
         jButtonCadastro.setFont(new java.awt.Font("BankGothic Md BT", 0, 14)); // NOI18N
@@ -83,53 +75,106 @@ public class JCadastraMinigame extends javax.swing.JPanel {
             }
         });
 
+        jTextDescricao.setBackground(new java.awt.Color(255, 204, 51));
+        jTextDescricao.setColumns(20);
+        jTextDescricao.setRows(5);
+        jScrollPane1.setViewportView(jTextDescricao);
+
+        jTextRequisito.setBackground(new java.awt.Color(255, 204, 51));
+        jTextRequisito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextRequisitoActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("BankGothic Lt BT", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 204, 51));
+        jLabel5.setText("Requisitos:");
+
+        jTextRecompensa.setBackground(new java.awt.Color(255, 204, 51));
+        jTextRecompensa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextRecompensaActionPerformed(evt);
+            }
+        });
+
+        jButtonVoltar.setBackground(new java.awt.Color(255, 204, 51));
+        jButtonVoltar.setFont(new java.awt.Font("BankGothic Md BT", 0, 12)); // NOI18N
+        jButtonVoltar.setForeground(new java.awt.Color(51, 0, 153));
+        jButtonVoltar.setText("Voltar");
+        jButtonVoltar.setMaximumSize(new java.awt.Dimension(115, 25));
+        jButtonVoltar.setMinimumSize(new java.awt.Dimension(115, 25));
+        jButtonVoltar.setPreferredSize(new java.awt.Dimension(115, 25));
+        jButtonVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVoltarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(49, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(49, 49, 49))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addGap(48, 48, 48)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel2)
+                                    .addGap(64, 64, 64)
+                                    .addComponent(jTextNome, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jButtonCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButtonVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel4)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jTextRecompensa))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jTextRequisito, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(16, 16, 16)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
-                    .addComponent(jTextEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
-                .addComponent(jButtonCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jTextRequisito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextRecompensa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonVoltar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonCadastro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -148,45 +193,64 @@ public class JCadastraMinigame extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextUsernameActionPerformed
+    private void jTextNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextUsernameActionPerformed
-
-    private void jTextEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextEmailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextEmailActionPerformed
+    }//GEN-LAST:event_jTextNomeActionPerformed
 
     private void jButtonCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastroActionPerformed
         // TODO add your handling code here:
-        String nome = this.jTextUsername.getText();
-        String email = this.jTextEmail.getText();
-        String senha = this.jPasswordField.getText();
+        String nome = this.jTextNome.getText();
+        String descricao = this.jTextDescricao.getText();
+        String requisitos = this.jTextRequisito.getText();
+        String recompensa = this.jTextRecompensa.getText();
 
-        Jogador temp = new Jogador(nome, email, senha);
-        boolean op = this.jogadorDAO.cadastraJogador(temp);
-
-        if (op) {
-            JOptionPane.showMessageDialog(this, "Nov jogador cadastrado com sucesso!",
-                "Sucesso",JOptionPane.INFORMATION_MESSAGE);
-
-            //volta para o frame
+        if (nome.isEmpty() || descricao.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Não é possível cadastrar informações nulas!",
+                    "falha", JOptionPane.ERROR_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(this, "Falha no cadastro de novo jogador!",
-                "Falha",JOptionPane.ERROR_MESSAGE);
+            Minigame temp = new Minigame(nome, descricao, requisitos, recompensa);
+            boolean op = minigameDAO.cadastraMinigame(temp);
+            
+            if (op) {
+                JOptionPane.showMessageDialog(this, "Novo minigame cadastrado com sucesso!",
+                        "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+
+                //volta para o frame
+            } else {
+                JOptionPane.showMessageDialog(this, "Falha no cadastro de novo minigame!",
+                        "Falha", JOptionPane.ERROR_MESSAGE);
+            }
         }
 
     }//GEN-LAST:event_jButtonCadastroActionPerformed
 
+    private void jTextRequisitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextRequisitoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextRequisitoActionPerformed
+
+    private void jTextRecompensaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextRecompensaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextRecompensaActionPerformed
+
+    private void jButtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarActionPerformed
+        // TODO add your handling code here:
+        FramePrincipal.trocaPainel("cadastros", new JCadastros());
+    }//GEN-LAST:event_jButtonVoltarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCadastro;
+    private javax.swing.JButton jButtonVoltar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField;
-    private javax.swing.JTextField jTextEmail;
-    private javax.swing.JTextField jTextUsername;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextDescricao;
+    private javax.swing.JTextField jTextNome;
+    private javax.swing.JTextField jTextRecompensa;
+    private javax.swing.JTextField jTextRequisito;
     // End of variables declaration//GEN-END:variables
 }

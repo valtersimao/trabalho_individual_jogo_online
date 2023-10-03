@@ -144,7 +144,7 @@ public class JCadastros extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonMinigameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMinigameActionPerformed
-        
+        FramePrincipal.trocaPainel("novoMinigame", new JCadastraMinigame());
     }//GEN-LAST:event_jButtonMinigameActionPerformed
 
     private void jButtonPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPlayerActionPerformed

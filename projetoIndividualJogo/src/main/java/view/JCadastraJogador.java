@@ -175,13 +175,17 @@ public class JCadastraJogador extends javax.swing.JPanel {
         String email = this.jTextEmail.getText();
         String senha = this.jPasswordField.getText();
 
-        if (nome != null && email != null && senha != null) {
+        if (nome.isEmpty() || email.isEmpty() || senha.isEmpty()) {
+
+            JOptionPane.showMessageDialog(this, "Não é possível cadastrar informações nulas!",
+                    "falha", JOptionPane.ERROR_MESSAGE);
+        } else {
 
             Jogador temp = new Jogador(nome, email, senha);
             boolean op = this.jogadorDAO.cadastraJogador(temp);
 
             if (op) {
-                JOptionPane.showMessageDialog(this, "Nov jogador cadastrado com sucesso!",
+                JOptionPane.showMessageDialog(this, "Novo jogador cadastrado com sucesso!",
                         "Sucesso", JOptionPane.INFORMATION_MESSAGE);
                 FramePrincipal.trocaPainel("cadastros", new JCadastros());
                 //volta para o frame
@@ -189,9 +193,6 @@ public class JCadastraJogador extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(this, "Falha no cadastro de novo jogador!",
                         "Falha", JOptionPane.ERROR_MESSAGE);
             }
-        }
-        else {
-            JOptionPane.showMessageDialog(this, "Não é possível cadastrar informações nulas!","falha",JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButtonCadastroActionPerformed
 

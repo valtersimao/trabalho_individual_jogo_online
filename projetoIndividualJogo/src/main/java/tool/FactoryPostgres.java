@@ -13,7 +13,7 @@ public class FactoryPostgres {
         //nao existe conexao ainda...
         if(conexaoPG == null){
             try{
-                conexaoPG = DriverManager.getConnection("jdbc:postgresql://10.90.24.54:5432/aula", 
+                conexaoPG = DriverManager.getConnection("jdbc:postgresql://200.18.128.54:5432/aula", 
                         "valter", 
                         "senha123");
             }catch(SQLException ex){
